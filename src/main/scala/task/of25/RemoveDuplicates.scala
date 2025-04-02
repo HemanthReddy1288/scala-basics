@@ -8,6 +8,7 @@ package task.of25
 //    Output: A new list without duplicates
 object RemoveDuplicates extends App{
   def removeDuplicates(list : List[Int]) : List[Int] ={
+    println(s"Helo")
     list.distinct
 
   }
