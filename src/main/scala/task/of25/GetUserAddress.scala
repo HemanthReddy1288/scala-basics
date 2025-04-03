@@ -22,6 +22,10 @@ object GetUserAddress extends App{
   case class Address(street: String, city: String, country: String)
 
   def getUserAddress(checkingId : Int,data:List[User]): List[Option[String]] ={
+    val y=users.
+      flatMap(user=>{
+        user.profile.map(_.address.map(x=>s"${x.city},${x.country},${x.street}"))
+      })
     users.map {
       case User(id, Some(value)) if (checkingId == id) =>
         value match {
